@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 192 192" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-1,-1)">
+        <g transform="matrix(0.2425,0,0,0.323333,0,0)">
+            <g id="Layer2" transform="matrix(4.12371,0,0,3.09278,-1319.59,-627.835)">
+                <g transform="matrix(0.797414,0,0,0.797414,101.224,64.7629)">
+                    <path d="M512,237C512,204.989 486.011,179 454,179L338,179C305.989,179 280,204.989 280,237L280,353C280,385.011 305.989,411 338,411L454,411C486.011,411 512,385.011 512,353L512,237Z" style="fill:none;stroke:rgb(0,112,149);stroke-width:8.78px;"/>
+                </g>
+                <g transform="matrix(0.241908,0.195779,-0.195779,0.241908,472.793,135.9)">
+                    <path d="M203.257,403L147,403L219.257,258.486L291.514,403L235.257,403L219.257,371L203.257,403Z" style="fill:rgb(100,121,130);"/>
+                </g>
+                <g transform="matrix(1,0,0,1,17.1233,4.60916)">
+                    <g transform="matrix(0.994671,0,0,1,-7.13845,-5.96596)">
+                        <text x="335.918px" y="298.973px" style="font-family:'NotoSansJP-Bold', 'Noto Sans JP', sans-serif;font-weight:700;font-size:36px;fill:rgb(36,112,149);">app<tspan x="403.13px " y="298.973px ">.</tspan></text>
+                    </g>
+                    <g transform="matrix(1,0,0,0.6,0.378,137.639)">
+                        <rect x="329.44" y="343" width="141.12" height="5" style="fill:rgb(100,121,130);"/>
+                    </g>
+                    <g transform="matrix(0.994671,0,0,1,20.1948,8.64406)">
+                        <text x="366.614px" y="323.459px" style="font-family:'NotoSansJP-Medium', 'Noto Sans JP', sans-serif;font-weight:500;font-size:36px;fill:rgb(185,200,207);">po<tspan x="411.29px 427.778px " y="323.459px 323.459px ">st</tspan>(</text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

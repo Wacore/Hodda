@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hodda</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./style/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section class="hero">
+      <header class="hero-header">
+        <span class="logo">Hodda</span>
+        <span></span>
+        <div class="navi">
+          <span class="navi-icon"><</span><span class="menu">Menu</span>
+        </div>
+      </header>
+      <div class="hero-content">
+        <span class="hero-intro">Hi, I am Hongda Zheng</span>
+        <h1 class="hero-title">I develop poducts</h1>
+        <h1 class="hero-title" id="heroTitleD">People like to use</h1>
+        <span class="hero-post">Web Developer & Mobile App Developer</span>
+        <div class="hero-action">
+          <div class="action-hire">
+            <span>HIRE ME</span>
+          </div>
+          <span class="action-projects">MY PROJECTS</span>
+        </div>
+      </div>
+      <div class="action-down"><span>Scroll Down</span></div>
+    </section>
+
+    <section class="feature-project">
+      <div class="container">
+        <div class="intro">
+          <h3>FEATURED PROJECT</h3>
+          <h2>HomeZone</h2>
+          <p>
+            HomeZone is a Pomodoro timer app with different features. Its
+            purpose is to make it simple for all the new users transitioning to
+            working from home to find easy access to tools that help them stay
+            productive. Additionally, the second goal is to educate users on
+            some beneficial health and psychological key points such as taking
+            breaks, stretches, desk ergonomics, and more.
+          </p>
+        </div>
+        <div class="image">
+          <div class="image-box"><span></span></div>
+        </div>
+      </div>
+      <div class="project-circle"></div>
+    </section>
+
+    <section class="about">
+      <div class="about-container">
+        <div class="about-title-box">
+          <h2 class="about-title">What I do</h2>
+        </div>
+        <div class="about-cards-box">
+          <div class="about-me-box">
+            <div class="about-me-content">
+              <h2>
+                Productive <br />Creative <br />
+                Reliable
+              </h2>
+              <p>
+                Currently, I am a web designer and developer and a mobile app
+                developer, who can work on many diverse projects.
+              </p>
+              <p>
+                I work to create innovative products with excellent aesthetics
+                and functionality based on my deep understanding of the product
+                and its users. Through my works, my clients can easily set up a
+                new business and let their products being discovered by many
+                people.
+              </p>
+            </div>
+            <div class="about-me-side">
+              <p class="meto">
+                Design is not just what it looks like and feels like. Design is
+                how it works.
+              </p>
+              <p>- Steve Jobs</p>
+            </div>
+          </div>
+        </div>
+
+        <ul class="about-section-list">
+          <li onclick="renderAboutSection('ability')">
+            <input type="radio" name="aboutSection" id="ability" checked />
+            <label for="ability">What I do</label>
+          </li>
+          <li onclick="renderAboutSection('skills')">
+            <input type="radio" name="aboutSection" id="skills" />
+            <label for="skills">Skill set</label>
+          </li>
+          <li>
+            <input type="radio" name="aboutSection" id="about" />
+            <label for="about">About</label>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="projects">
+      <div class="websites">
+        <div class="image image-laptop">
+          <img
+            src="./images/28505-7-macbook-picture_800x800.png"
+            alt="macbook"
+          />
+        </div>
+        <div class="image image-content" id="gamedoraImg">
+          <img src="./images/gamedora-m.png" alt="inpex" />
+        </div>
+        <div class="image image-content" id="vacayelpImg">
+          <img src="./images/vacayelp-m.png" alt="inpex" />
+        </div>
+        <div class="image image-content" id="inpexImg">
+          <img src="./images/inpex-m.png" alt="inpex" />
+        </div>
+        <div class="project-desc" id="gamedoraDesc">
+          <h2>Gamedora</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non ipsam
+            voluptatum ratione eius fugit perspiciatis voluptates commodi nisi
+            quibusdam temporibus fugiat laboriosam totam, natus dolore explicabo
+            dolorum magnam! Unde, corporis?
+          </p>
+        </div>
+        <div class="project-desc" id="vacayelpDesc">
+          <h2>VacaYelp</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non ipsam
+            voluptatum ratione eius fugit perspiciatis voluptates commodi nisi
+            quibusdam temporibus fugiat laboriosam totam, natus dolore explicabo
+            dolorum magnam! Unde, corporis?
+          </p>
+        </div>
+        <div class="project-desc" id="inpexDesc">
+          <h2>Inpexa</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non ipsam
+            voluptatum ratione eius fugit perspiciatis voluptates commodi nisi
+            quibusdam temporibus fugiat laboriosam totam, natus dolore explicabo
+            dolorum magnam! Unde, corporis?
+          </p>
+        </div>
+      </div>
+      <div class="app">
+        <div class="image image-phone">
+          <img src="./images/phone.png" alt="macbook" />
+        </div>
+        <div class="project-app-desc" id="naokijc">
+          <h2>NaokiJC</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non ipsam
+            voluptatum ratione eius fugit perspiciatis voluptates commodi nisi
+            quibusdam temporibus fugiat laboriosam totam, natus dolore explicabo
+            dolorum magnam! Unde, corporis?
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="action-container">
+        <h2>
+          Like what you see? <span class="action-highlight">Hire Me.</span>
+        </h2>
+      </div>
+      <div class="contact">
+        <div class="footer-logo-small">
+          <img src="./images/v-shape-b.svg" alt="footer-logo-small" />
+        </div>
+        <div class="contact-container">
+          <span>Hodda</span>
+          <ul class="social-media">
+            <li>
+              <a href="">
+                <i class="fab fa-twitter-square"></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i class="fab fa-instagram-square"></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i class="fab fa-github-square"></i>
+              </a>
+            </li>
+          </ul>
+          <address>
+            <span>
+              E.
+              <a href="mailto:hoddazheng@gmail.com">hoddazheng@gmail.com</a
+              ><br />
+            </span>
+            <span>
+              T.
+              <a href="tel:+13214315115">(321) 431-5115</a>
+            </span>
+          </address>
+        </div>
+        <div class="footer-menu">
+          <ul>
+            <li>
+              <a href="">Home</a>
+            </li>
+            <li>
+              <a href="">Featured Project</a>
+            </li>
+            <li>
+              <a href="">About</a>
+            </li>
+            <li>
+              <a href="">Projects</a>
+            </li>
+            <li>
+              <a href="">Contact me</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-logo">
+          <img src="./images/v-shap-b-footer.svg" alt="footer-logo" />
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="./render/shapes.js"></script>
+    <script src="./funcs/Ability.js"></script>
+    <script src="./funcs/Skills.js"></script>
+    <script>
+      let tlProject = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".websites",
+          start: "bottom bottom",
+          pin: true,
+        },
+      });
+
+      tlProject
+        .from(".image-laptop", { duration: 1, scale: 4, opacity: 0 })
+        .from("#gamedoraImg", { x: 200, opacity: 0, duration: 1 })
+        .from("#gamedoraDesc", { y: -20, opacity: 0, duration: 2 }, "-=1")
+        .from("#vacayelpImg", { x: 200, opacity: 0, duration: 0.8 })
+        .from("#vacayelpDesc", { y: -20, opacity: 0, duration: 1.5 }, "-=1")
+        .from("#inpexImg", { x: 200, opacity: 0, duration: 0.8 })
+        .from("#inpexDesc", { y: -20, opacity: 0, duration: 1.5 }, "-=1");
+
+      const renderAboutSection = (keyword) => {
+        let title = document.querySelector(".about-title");
+        let box = document.querySelector(".about-cards-box");
+        if (keyword === "ability") {
+          let renderItem = "";
+          let ti = new Title("What I do");
+          aboutObjects.map((a) => {
+            renderItem += new Card(a.icon, a.title, a.desc).render();
+            return renderItem;
+          });
+
+          title.innerHTML = ti.render();
+          box.innerHTML = renderItem;
+        } else if (keyword === "skills") {
+          let renderItem = "";
+          let ti = new Title("Skill Set");
+          skillObjects.map((s) => {
+            renderItem += new Skill(s.name, s.img).render();
+            return renderItem;
+          });
+
+          title.innerHTML = ti.render();
+          box.innerHTML = `<div class="skills-box">${renderItem}</div>`;
+        }
+      };
+    </script>
+  </body>
+</html>
+
+<!-- <div class="about-card">
+            <div class="image-container">
+              <img src="./images/design.svg" alt="design logo" />
+            </div>
+            <p class="skill-title">Frontend Design</p>
+            <p class="feature-desc">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+              ipsam possimus ad consectetur! Quia mollitia obcaecati officia vel
+              doloribus, exercitationem suscipit eum ad ut veniam a iusto alias
+              rem placeat.
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="image-container">
+              <img src="./images/backend.svg" alt="backend logo" />
+            </div>
+            <p class="skill-title">Backend Development</p>
+            <p class="feature-desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Molestiae deleniti exercitationem praesentium? Quisquam asperiores
+              quam magni ipsum voluptatibus nisi cupiditate possimus quis
+              provident
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="image-container">
+              <img src="./images/uxui.svg" alt="design logo" />
+            </div>
+            <p class="skill-title">UX UI Design</p>
+            <p class="feature-desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+              culpa libero nihil! Sunt maxime voluptatum nobis totam. Alias esse
+              corrupti deleniti laboriosam aut mollitia pariatur voluptas
+              ducimus,
+            </p>
+          </div> -->
+
+<!-- <div class="skills-box">
+  <div class="skill-card">
+    <div class="skill-icon-box">
+      <img src="./images/icons/html5.svg" alt="HTML icon" />
+    </div>
+    <span>HTML</span>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icon-box">
+      <img src="./images/icons/css3.svg" alt="CSS icon" />
+    </div>
+    <span>CSS</span>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icon-box">
+      <img src="./images/icons/javascript.svg" alt="Javascript icon" />
+    </div>
+    <span>Javascript</span>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icon-box">
+      <img src="./images/icons/php.svg" alt="PHP icon" />
+    </div>
+    <span>PHP</span>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icon-box">
+      <img src="./images/icons/mysql.svg" alt="Mysql icon" />
+    </div>
+    <span>MySQL</span>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icon-box">
+      <img src="./images/icons/node-dot-js.svg" alt="NodeJS icon" />
+    </div>
+    <span>Node.JS</span>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icon-box">
+      <img src="./images/icons/react.svg" alt="React icon" />
+    </div>
+    <span>React</span>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icon-box">
+      <img src="./images/icons/angular.svg" alt="Angular icon" />
+    </div>
+    <span>Angular</span>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icon-box">
+      <img src="./images/icons/redux.svg" alt="Redux icon" />
+    </div>
+    <span>Redux</span>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icon-box">
+      <img src="./images/icons/python.svg" alt="Python icon" />
+    </div>
+    <span>Python</span>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icon-box">
+      <img src="./images/icons/sass.svg" alt="Sass icon" />
+    </div>
+    <span>Sass</span>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icon-box">
+      <img src="./images/icons/typescript.svg" alt="TypeScript icon" />
+    </div>
+    <span>TypeScript</span>
+  </div>
+</div> -->
