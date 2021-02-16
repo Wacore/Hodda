@@ -10,6 +10,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="./style/index.css" />
+    <link rel="stylesheet" href="./style/mobile-index.css" />
+    <link rel="stylesheet" href="./style/tablet-index.css" />
+    <link rel="stylesheet" href="./style/laptop-index.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
@@ -18,12 +21,25 @@
     />
   </head>
   <body>
-    <section class="hero">
+    <section class="hero" id="heroSection">
       <header class="hero-header">
         <span class="logo">Hodda</span>
         <span></span>
         <div class="navi">
-          <span class="navi-icon"><</span><span class="menu">Menu</span>
+          <ul>
+            <li>
+              <a href="#featureSection">Featured Project</a>
+            </li>
+            <li>
+              <a href="#aboutSection">About</a>
+            </li>
+            <li>
+              <a href="#projectsSection">Projects</a>
+            </li>
+            <li>
+              <a href="#footerSection">Contact</a>
+            </li>
+          </ul>
         </div>
       </header>
       <div class="hero-content">
@@ -32,16 +48,14 @@
         <h1 class="hero-title" id="heroTitleD">People like to use</h1>
         <span class="hero-post">Web Developer & Mobile App Developer</span>
         <div class="hero-action">
-          <div class="action-hire">
-            <span>HIRE ME</span>
-          </div>
-          <span class="action-projects">MY PROJECTS</span>
+          <div class="action-hire action-box">HIRE ME</div>
+          <div class="action-projects action-box">MY PROJECTS</div>
         </div>
       </div>
       <div class="action-down"><span>Scroll Down</span></div>
     </section>
 
-    <section class="feature-project">
+    <section class="feature-project" id="featureSection">
       <div class="container">
         <div class="intro">
           <h3>FEATURED PROJECT</h3>
@@ -62,119 +76,167 @@
       <div class="project-circle"></div>
     </section>
 
-    <section class="about">
+    <section class="about" id="aboutSection">
       <div class="about-container">
         <div class="about-title-box">
           <h2 class="about-title">What I do</h2>
         </div>
         <div class="about-cards-box">
-          <div class="about-me-box">
-            <div class="about-me-content">
-              <h2>
-                Productive <br />Creative <br />
-                Reliable
-              </h2>
-              <p>
-                Currently, I am a web designer and developer and a mobile app
-                developer, who can work on many diverse projects.
-              </p>
-              <p>
-                I work to create innovative products with excellent aesthetics
-                and functionality based on my deep understanding of the product
-                and its users. Through my works, my clients can easily set up a
-                new business and let their products being discovered by many
-                people.
-              </p>
+          <div class="about-card">
+            <div class="image-container">
+              <img src="./images/design.svg" alt="design logo" />
             </div>
-            <div class="about-me-side">
-              <p class="meto">
-                Design is not just what it looks like and feels like. Design is
-                how it works.
-              </p>
-              <p>- Steve Jobs</p>
+            <p class="skill-title">Frontend Design</p>
+            <p class="feature-desc">
+              HTML/CSS, JavaScript, Accessibility, User Interface Design, CSS
+              Layout / Grids, Responsive Web Design, CSS Animation, Scalable
+              Vector Graphics
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="image-container">
+              <img src="./images/backend.svg" alt="backend logo" />
             </div>
+            <p class="skill-title">Backend Development</p>
+            <p class="feature-desc">
+              PHP, MySQL, Node.js, Express, MongoDB, Python, creation of
+              functional APIs, design of service architecture, writing re-usable
+              unit test documents
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="image-container">
+              <img src="./images/uxui.svg" alt="design logo" />
+            </div>
+            <p class="skill-title">UX UI Design</p>
+            <p class="feature-desc">
+              Wireframing, UI Prototyping, Landing Pages, User Flow, Mobile App
+              Design, Web App, User Research, Interaction Design, Visual
+              Communication
+            </p>
           </div>
         </div>
 
         <ul class="about-section-list">
-          <li onclick="renderAboutSection('ability')">
+          <li>
             <input type="radio" name="aboutSection" id="ability" checked />
-            <label for="ability">What I do</label>
+            <label for="ability" onclick="renderAboutSection('ability')"
+              >What I do</label
+            >
           </li>
-          <li onclick="renderAboutSection('skills')">
+          <li>
             <input type="radio" name="aboutSection" id="skills" />
-            <label for="skills">Skill set</label>
+            <label for="skills" onclick="renderAboutSection('skills')"
+              >Skill set</label
+            >
           </li>
           <li>
             <input type="radio" name="aboutSection" id="about" />
-            <label for="about">About</label>
+            <label for="about" onclick="renderAboutSection('about')"
+              >About</label
+            >
           </li>
         </ul>
       </div>
     </section>
 
-    <section class="projects">
+    <section class="projects" id="projectsSection">
       <div class="websites">
+        <div class="image image-content" id="websitesImage">
+          <img src="./images/gamedora-m.png" alt="inpex" />
+        </div>
         <div class="image image-laptop">
           <img
             src="./images/28505-7-macbook-picture_800x800.png"
             alt="macbook"
           />
         </div>
-        <div class="image image-content" id="gamedoraImg">
-          <img src="./images/gamedora-m.png" alt="inpex" />
-        </div>
-        <div class="image image-content" id="vacayelpImg">
-          <img src="./images/vacayelp-m.png" alt="inpex" />
-        </div>
-        <div class="image image-content" id="inpexImg">
-          <img src="./images/inpex-m.png" alt="inpex" />
-        </div>
         <div class="project-desc" id="gamedoraDesc">
-          <h2>Gamedora</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non ipsam
-            voluptatum ratione eius fugit perspiciatis voluptates commodi nisi
-            quibusdam temporibus fugiat laboriosam totam, natus dolore explicabo
-            dolorum magnam! Unde, corporis?
+          <h2 class="animated-text" id="projectTitle">Gamedora</h2>
+          <p class="animated-text" id="projectDesc">
+            Gamedora is a platform that helps gamers who are at a loss for what
+            to play next and provides them an opportunity to share their
+            opinions. Let your voice be heard and help other people find their
+            favorite games.
           </p>
-        </div>
-        <div class="project-desc" id="vacayelpDesc">
-          <h2>VacaYelp</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non ipsam
-            voluptatum ratione eius fugit perspiciatis voluptates commodi nisi
-            quibusdam temporibus fugiat laboriosam totam, natus dolore explicabo
-            dolorum magnam! Unde, corporis?
-          </p>
-        </div>
-        <div class="project-desc" id="inpexDesc">
-          <h2>Inpexa</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non ipsam
-            voluptatum ratione eius fugit perspiciatis voluptates commodi nisi
-            quibusdam temporibus fugiat laboriosam totam, natus dolore explicabo
-            dolorum magnam! Unde, corporis?
-          </p>
+          <div class="project-list">
+            <div class="radio-box">
+              <input type="radio" name="projects" id="gamedora-radio" checked />
+              <label
+                class="radio"
+                for="gamedora-radio"
+                onclick="switchWebProjectSection('gamedora')"
+              ></label>
+            </div>
+            <div class="radio-box">
+              <input type="radio" name="projects" id="vacayelp-radio" />
+              <label
+                class="radio"
+                for="vacayelp-radio"
+                onclick="switchWebProjectSection('vacayelp')"
+              ></label>
+            </div>
+            <div class="radio-box">
+              <input type="radio" name="projects" id="inpex-radio" />
+              <label
+                class="radio"
+                for="inpex-radio"
+                onclick="switchWebProjectSection('inpex')"
+              ></label>
+            </div>
+          </div>
         </div>
       </div>
       <div class="app">
+        <div class="image image-content" id="naokiAppImage">
+          <img src="./images/app-home.png" alt="Naoki app Home page" />
+        </div>
         <div class="image image-phone">
           <img src="./images/phone.png" alt="macbook" />
+        </div>
+        <div class="app-section-list">
+          <div
+            class="app-handler"
+            id="order"
+            onclick="swtichAppSection('order')"
+          >
+            <span>1</span>
+          </div>
+          <div
+            class="app-handler"
+            id="dishDetail"
+            onclick="swtichAppSection('dishDetail')"
+          >
+            <span>2</span>
+          </div>
+          <div
+            class="app-handler"
+            id="orderDetail"
+            onclick="swtichAppSection('orderDetail')"
+          >
+            <span>3</span>
+          </div>
+          <div
+            class="app-handler"
+            id="preplist"
+            onclick="swtichAppSection('preplist')"
+          >
+            <span>4</span>
+          </div>
         </div>
         <div class="project-app-desc" id="naokijc">
           <h2>NaokiJC</h2>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non ipsam
-            voluptatum ratione eius fugit perspiciatis voluptates commodi nisi
-            quibusdam temporibus fugiat laboriosam totam, natus dolore explicabo
-            dolorum magnam! Unde, corporis?
+            NaokiJC is an order management app for a local restaurant. The staff
+            can use this app to take an order. Then, an organized, sorted order
+            will appear on all devices and be saved to the database. The app
+            greatly reduced confusion and increased efficiency.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="footer">
+    <section class="footer" id="footerSection">
       <div class="action-container">
         <h2>
           Like what you see? <span class="action-highlight">Hire Me.</span>
@@ -223,19 +285,16 @@
         <div class="footer-menu">
           <ul>
             <li>
-              <a href="">Home</a>
+              <a href="#featureSection">Featured Project</a>
             </li>
             <li>
-              <a href="">Featured Project</a>
+              <a href="#aboutSection">About</a>
             </li>
             <li>
-              <a href="">About</a>
+              <a href="#projectsSection">Projects</a>
             </li>
             <li>
-              <a href="">Projects</a>
-            </li>
-            <li>
-              <a href="">Contact me</a>
+              <a href="#footerSection">Contact</a>
             </li>
           </ul>
         </div>
@@ -244,168 +303,37 @@
         </div>
       </div>
     </section>
-
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="./render/shapes.js"></script>
     <script src="./funcs/Ability.js"></script>
     <script src="./funcs/Skills.js"></script>
+    <script src="./funcs/About.js"></script>
+    <script src="./funcs/WebProject.js"></script>
+    <script src="./funcs/AppProject.js"></script>
     <script>
       let tlProject = gsap.timeline({
         scrollTrigger: {
           trigger: ".websites",
           start: "bottom bottom",
-          pin: true,
+          // pin: true,
         },
       });
 
-      tlProject
-        .from(".image-laptop", { duration: 1, scale: 4, opacity: 0 })
-        .from("#gamedoraImg", { x: 200, opacity: 0, duration: 1 })
-        .from("#gamedoraDesc", { y: -20, opacity: 0, duration: 2 }, "-=1")
-        .from("#vacayelpImg", { x: 200, opacity: 0, duration: 0.8 })
-        .from("#vacayelpDesc", { y: -20, opacity: 0, duration: 1.5 }, "-=1")
-        .from("#inpexImg", { x: 200, opacity: 0, duration: 0.8 })
-        .from("#inpexDesc", { y: -20, opacity: 0, duration: 1.5 }, "-=1");
-
-      const renderAboutSection = (keyword) => {
-        let title = document.querySelector(".about-title");
-        let box = document.querySelector(".about-cards-box");
-        if (keyword === "ability") {
-          let renderItem = "";
-          let ti = new Title("What I do");
-          aboutObjects.map((a) => {
-            renderItem += new Card(a.icon, a.title, a.desc).render();
-            return renderItem;
-          });
-
-          title.innerHTML = ti.render();
-          box.innerHTML = renderItem;
-        } else if (keyword === "skills") {
-          let renderItem = "";
-          let ti = new Title("Skill Set");
-          skillObjects.map((s) => {
-            renderItem += new Skill(s.name, s.img).render();
-            return renderItem;
-          });
-
-          title.innerHTML = ti.render();
-          box.innerHTML = `<div class="skills-box">${renderItem}</div>`;
-        }
-      };
+      // tlProject
+      //   .from(".image-laptop", { duration: 1, scale: 4, opacity: 0 })
+      //   .from("#gamedoraImg", { x: 200, opacity: 0, duration: 1 })
+      //   .from("#gamedoraDesc", { y: -20, opacity: 0, duration: 2 }, "-=1")
+      //   .from("#vacayelpImg", { x: 200, opacity: 0, duration: 0.8 })
+      //   .from("#vacayelpDesc", { y: -20, opacity: 0, duration: 1.5 }, "-=1")
+      //   .from("#inpexImg", { x: 200, opacity: 0, duration: 0.8 })
+      //   .from("#inpexDesc", { y: -20, opacity: 0, duration: 1.5 }, "-=1");
     </script>
   </body>
 </html>
-
-<!-- <div class="about-card">
-            <div class="image-container">
-              <img src="./images/design.svg" alt="design logo" />
-            </div>
-            <p class="skill-title">Frontend Design</p>
-            <p class="feature-desc">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
-              ipsam possimus ad consectetur! Quia mollitia obcaecati officia vel
-              doloribus, exercitationem suscipit eum ad ut veniam a iusto alias
-              rem placeat.
-            </p>
-          </div>
-          <div class="about-card">
-            <div class="image-container">
-              <img src="./images/backend.svg" alt="backend logo" />
-            </div>
-            <p class="skill-title">Backend Development</p>
-            <p class="feature-desc">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Molestiae deleniti exercitationem praesentium? Quisquam asperiores
-              quam magni ipsum voluptatibus nisi cupiditate possimus quis
-              provident
-            </p>
-          </div>
-          <div class="about-card">
-            <div class="image-container">
-              <img src="./images/uxui.svg" alt="design logo" />
-            </div>
-            <p class="skill-title">UX UI Design</p>
-            <p class="feature-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              culpa libero nihil! Sunt maxime voluptatum nobis totam. Alias esse
-              corrupti deleniti laboriosam aut mollitia pariatur voluptas
-              ducimus,
-            </p>
-          </div> -->
-
-<!-- <div class="skills-box">
-  <div class="skill-card">
-    <div class="skill-icon-box">
-      <img src="./images/icons/html5.svg" alt="HTML icon" />
-    </div>
-    <span>HTML</span>
-  </div>
-  <div class="skill-card">
-    <div class="skill-icon-box">
-      <img src="./images/icons/css3.svg" alt="CSS icon" />
-    </div>
-    <span>CSS</span>
-  </div>
-  <div class="skill-card">
-    <div class="skill-icon-box">
-      <img src="./images/icons/javascript.svg" alt="Javascript icon" />
-    </div>
-    <span>Javascript</span>
-  </div>
-  <div class="skill-card">
-    <div class="skill-icon-box">
-      <img src="./images/icons/php.svg" alt="PHP icon" />
-    </div>
-    <span>PHP</span>
-  </div>
-  <div class="skill-card">
-    <div class="skill-icon-box">
-      <img src="./images/icons/mysql.svg" alt="Mysql icon" />
-    </div>
-    <span>MySQL</span>
-  </div>
-  <div class="skill-card">
-    <div class="skill-icon-box">
-      <img src="./images/icons/node-dot-js.svg" alt="NodeJS icon" />
-    </div>
-    <span>Node.JS</span>
-  </div>
-  <div class="skill-card">
-    <div class="skill-icon-box">
-      <img src="./images/icons/react.svg" alt="React icon" />
-    </div>
-    <span>React</span>
-  </div>
-  <div class="skill-card">
-    <div class="skill-icon-box">
-      <img src="./images/icons/angular.svg" alt="Angular icon" />
-    </div>
-    <span>Angular</span>
-  </div>
-  <div class="skill-card">
-    <div class="skill-icon-box">
-      <img src="./images/icons/redux.svg" alt="Redux icon" />
-    </div>
-    <span>Redux</span>
-  </div>
-  <div class="skill-card">
-    <div class="skill-icon-box">
-      <img src="./images/icons/python.svg" alt="Python icon" />
-    </div>
-    <span>Python</span>
-  </div>
-  <div class="skill-card">
-    <div class="skill-icon-box">
-      <img src="./images/icons/sass.svg" alt="Sass icon" />
-    </div>
-    <span>Sass</span>
-  </div>
-  <div class="skill-card">
-    <div class="skill-icon-box">
-      <img src="./images/icons/typescript.svg" alt="TypeScript icon" />
-    </div>
-    <span>TypeScript</span>
-  </div>
-</div> -->

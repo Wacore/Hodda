@@ -1,11 +1,8 @@
 let width = "100%";
 let height = "100vh";
+let w = window.innerWidth;
 
-var svg = d3
-  .select(".hero")
-  .append("svg")
-  .attr("width", width)
-  .attr("height", height);
+var svg;
 
 let x = "74%";
 let y = "50%";
@@ -128,48 +125,68 @@ const vShapes = [
   },
 ];
 
-svg
-  .append("rect")
-  .attr("x", 0)
-  .attr("y", 0)
-  .attr("height", "100vh")
-  .attr("width", x)
-  .attr("fill", "#eee");
-
-circles.map((c) =>
+if (w >= 784) {
+  svg = d3
+    .select(".hero")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
   svg
-    .append("circle")
-    .attr("cx", c.cx)
-    .attr("cy", c.cy)
-    .attr("r", c.r)
-    .attr("fill", c.fill)
-    .attr("fill-opacity", c.fillOpacity)
-    .attr("class", c.className)
-);
+    .append("rect")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("height", "100vh")
+    .attr("width", x)
+    .attr("fill", "#eee");
+  renderCircles(circles, svg);
+  renderVShapes(vShapes, svg);
+} else if (w < 783 && w > 300) {
+  height = "50vh";
+  svg = d3
+    .select(".hero")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+}
 
-vShapes.map((v) => {
-  if (v.id) {
+function renderCircles(circles, svg) {
+  circles.map((c) =>
     svg
-      .append("svg:image")
-      .attr("xlink:href", v.href)
-      .attr("width", v.width)
-      .attr("height", v.height)
-      .attr("x", () => {
-        return `calc(${x.slice(0, -1)}% - (${v.width}px / 2 ) - 2px)`;
-      })
-      .attr("y", () => {
-        return `calc(${y.slice(0, -1)}% - (${v.height}px / 2) - 50px)`;
-      })
-      .attr("class", "v-shape")
-      .attr("id", v.id);
-  } else {
-    svg
-      .append("svg:image")
-      .attr("xlink:href", v.href)
-      .attr("width", 70)
-      .attr("height", 70)
-      .attr("x", v.x)
-      .attr("y", v.y)
-      .attr("class", "v-shape");
-  }
-});
+      .append("circle")
+      .attr("cx", c.cx)
+      .attr("cy", c.cy)
+      .attr("r", c.r)
+      .attr("fill", c.fill)
+      .attr("fill-opacity", c.fillOpacity)
+      .attr("class", c.className)
+  );
+}
+
+function renderVShapes(vShapes, svg) {
+  vShapes.map((v) => {
+    if (v.id) {
+      svg
+        .append("svg:image")
+        .attr("xlink:href", v.href)
+        .attr("width", v.width)
+        .attr("height", v.height)
+        .attr("x", () => {
+          return `calc(${x.slice(0, -1)}% - (${v.width}px / 2 ) - 2px)`;
+        })
+        .attr("y", () => {
+          return `calc(${y.slice(0, -1)}% - (${v.height}px / 2) - 50px)`;
+        })
+        .attr("class", "v-shape")
+        .attr("id", v.id);
+    } else {
+      svg
+        .append("svg:image")
+        .attr("xlink:href", v.href)
+        .attr("width", 70)
+        .attr("height", 70)
+        .attr("x", v.x)
+        .attr("y", v.y)
+        .attr("class", "v-shape");
+    }
+  });
+}

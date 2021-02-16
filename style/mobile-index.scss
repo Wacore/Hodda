@@ -1,0 +1,288 @@
+$primary-color: rgba(34, 130, 177, 1);
+$primary-color-accent: rgba(27, 109, 149, 1);
+$secondary-color: rgba(42, 187, 187, 1);
+$secondary-color-accent: rgba(25, 154, 154, 1);
+$white: #ffffff;
+$white-accent: rgb(242, 242, 242);
+$gray: rgb(236, 236, 236);
+$footer-blue: rgb(6, 59, 85);
+
+@mixin card {
+  background-color: $white;
+  border-radius: 20px;
+  padding: 1.5em 1em;
+  box-shadow: 0px 10px 13px -7px #000000, 3px -1px 2px -1px rgba(0, 0, 0, 0);
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    .hero {
+      position: relative;
+      height: 120vh;
+
+      .hero-content {
+        width: 90%;
+
+        position: absolute;
+        bottom: 25vh;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        @include card;
+
+        h1 {
+          font-size: 2.4em;
+        }
+
+        .hero-post {
+          margin: 1.2em 0;
+        }
+      }
+    }
+
+    .feature-project {
+      width: 100%;
+      height: 105vh;
+
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+
+      .container {
+        width: 100%;
+        height: 83vh;
+        background-color: $white-accent;
+        display: grid;
+        grid-template-rows: 40% 60%;
+
+        .image {
+          height: 100%;
+          width: 100%;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+
+          .image-box {
+            height: calc(160px * 2.2);
+            width: calc(288px * 2.2);
+            background-image: url("../images/homezone.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+          }
+        }
+
+        .intro {
+          margin: 0;
+          grid-row: 2 / span 1;
+          width: 90%;
+          height: 90%;
+          margin: 0 auto;
+          align-self: center;
+          z-index: 2;
+          @include card;
+        }
+      }
+    }
+
+    .about {
+      width: 100%;
+      height: auto;
+      background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+      position: relative;
+
+      .about-container {
+        display: grid;
+        grid-template-rows: 10vh 5vh clac(100vh - 15vh);
+        width: 100%;
+        height: 100%;
+
+        .about-cards-box {
+          flex-direction: column;
+
+          .about-card {
+            margin: 1em 0;
+            @include card;
+          }
+        }
+      }
+
+      .skills-box {
+        width: 450px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+
+        .skill-card {
+          width: 200px;
+          margin: 0.5em 0;
+        }
+      }
+
+      .about-me-box {
+        position: relative;
+        width: 500px;
+        height: 80vh;
+        z-index: 1;
+
+        .about-me-side {
+          position: absolute;
+          top: 10px;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          padding: 0 1em;
+
+          .meto {
+            font-size: 36px;
+            margin-bottom: 1em;
+          }
+        }
+
+        .about-me-content {
+          position: absolute;
+          width: 90%;
+          height: 55%;
+          top: 32vh;
+          left: 50%;
+          transform: translate(-50%, 0);
+          z-index: 2;
+          padding: 1em;
+          @include card;
+
+          h2 {
+            font-size: 24px;
+            margin-bottom: 1em;
+          }
+
+          p {
+            font-size: 15px;
+            color: rgb(44, 44, 44);
+            margin-bottom: 0.8em;
+          }
+        }
+      }
+
+      .about-section-list {
+        grid-row: 2 / span 1;
+        display: block;
+        margin: 0 auto;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+
+        li {
+          padding: 0 1em;
+        }
+      }
+    }
+
+    .projects {
+      width: 500px;
+      height: auto;
+
+      background-color: black;
+
+      .websites {
+        height: 100vh;
+        position: relative;
+        z-index: 1;
+
+        .image {
+          width: 500px;
+          height: 500px;
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+
+          .image-laptop {
+            z-index: 3;
+          }
+
+          .image-content {
+            z-index: 2;
+          }
+        }
+
+        .project-desc {
+          top: 450px;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+      }
+
+      .app {
+        height: 100vh;
+        background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+        position: relative;
+        .image {
+          width: 500px;
+          height: 500px;
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .app-section-list {
+          position: absolute;
+          top: 500px;
+          left: 50%;
+          transform: translate(-50%, 0);
+          display: flex;
+        }
+
+        .project-app-desc {
+          height: 200px;
+          width: 85%;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%, 0);
+
+          @include card;
+          background-color: $white;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+          box-shadow: -5px 0px 13px -7px #000000, 5px 0px 13px -7px #000000,
+            3px 1px 2px -1px rgba(0, 0, 0, 0);
+          overflow-y: hidden;
+        }
+      }
+    }
+
+    .footer {
+      height: 100vh;
+      display: grid;
+      grid-template-rows: 40vh 60vh;
+
+      .contact {
+        background-color: $secondary-color-accent;
+        padding: 1em;
+
+        .footer-logo {
+          width: 200px;
+          height: 207px;
+          right: 10px;
+          bottom: 0;
+        }
+      }
+
+      .footer-menu ul li a {
+        font-size: 16px;
+      }
+    }
+  }
+}

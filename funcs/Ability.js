@@ -3,20 +3,20 @@ let aboutObjects = [
     icon: "./images/design.svg",
     title: "Frontend Design",
     desc:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas ipsam possimus ad consectetur! Quia mollitia obcaecati officia vel doloribus, exercitationem suscipit eum ad ut veniam a iusto alias rem placeat.",
+      "HTML/CSS, JavaScript, Accessibility, User Interface Design, CSS Layout / Grids, Responsive Web Design, CSS Animation, Scalable Vector Graphics",
   },
 
   {
     icon: "./images/backend.svg",
     title: "Backend Development",
     desc:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas ipsam possimus ad consectetur! Quia mollitia obcaecati officia vel doloribus, exercitationem suscipit eum ad ut veniam a iusto alias rem placeat.",
+      "PHP, MySQL, Node.js, Express, MongoDB, Python, Creation of functional APIs, Design of service architecture, Writing re-usable unit test documents",
   },
   {
     icon: "./images/uxui.svg",
     title: "UX UI Design",
     desc:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas ipsam possimus ad consectetur! Quia mollitia obcaecati officia vel doloribus, exercitationem suscipit eum ad ut veniam a iusto alias rem placeat.",
+      "Wireframing, UI Prototyping, Landing Pages, User Flow, Mobile App Design, Web App, User Research, Interaction Design, Visual Communication",
   },
 ];
 
@@ -46,6 +46,6 @@ class Title {
   }
 
   render() {
-    return `<h2 class="about-title">${this.title}</h2>`;
+    return this.title;
   }
 }
