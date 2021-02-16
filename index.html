@@ -151,7 +151,7 @@
             alt="macbook"
           />
         </div>
-        <div class="project-desc" id="gamedoraDesc">
+        <div class="project-desc" id="websitesDesc">
           <h2 class="animated-text" id="projectTitle">Gamedora</h2>
           <p class="animated-text" id="projectDesc">
             Gamedora is a platform that helps gamers who are at a loss for what
@@ -192,7 +192,7 @@
           <img src="./images/app-home.png" alt="Naoki app Home page" />
         </div>
         <div class="image image-phone">
-          <img src="./images/phone.png" alt="macbook" />
+          <img src="./images/phone.png" alt="iphone 6" />
         </div>
         <div class="app-section-list">
           <div
@@ -318,22 +318,32 @@
     <script src="./funcs/WebProject.js"></script>
     <script src="./funcs/AppProject.js"></script>
     <script>
-      let tlProject = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".websites",
-          start: "bottom bottom",
-          // pin: true,
-        },
-      });
+      if (w > 500) {
+        let tlWebProject = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".websites",
+            start: "bottom bottom",
+            pin: true,
+          },
+        });
+        tlWebProject
+          .from(".image-laptop", { duration: 1, scale: 4, opacity: 0 })
+          .from("#websitesImage", { x: 200, opacity: 0, duration: 1 })
+          .from("#websitesDesc", { y: -20, opacity: 0, duration: 2 }, "-=1");
 
-      // tlProject
-      //   .from(".image-laptop", { duration: 1, scale: 4, opacity: 0 })
-      //   .from("#gamedoraImg", { x: 200, opacity: 0, duration: 1 })
-      //   .from("#gamedoraDesc", { y: -20, opacity: 0, duration: 2 }, "-=1")
-      //   .from("#vacayelpImg", { x: 200, opacity: 0, duration: 0.8 })
-      //   .from("#vacayelpDesc", { y: -20, opacity: 0, duration: 1.5 }, "-=1")
-      //   .from("#inpexImg", { x: 200, opacity: 0, duration: 0.8 })
-      //   .from("#inpexDesc", { y: -20, opacity: 0, duration: 1.5 }, "-=1");
+        let tlAppProject = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".app",
+            start: "bottom bottom",
+            pin: true,
+          },
+        });
+
+        tlAppProject
+          .from(".image-phone", { duration: 1, y: -20, opacity: 0 })
+          .from("#naokiAppImage", { duration: 1, x: 20, opacity: 0 })
+          .from("#naokijc", { duration: 2, y: -20, opacity: 0 }, "-=1");
+      }
     </script>
   </body>
 </html>

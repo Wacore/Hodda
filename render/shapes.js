@@ -1,19 +1,27 @@
 let width = "100%";
 let height = "100vh";
 let w = window.innerWidth;
+let h = window.innerHeight;
 
-var svg;
+var svg = d3
+  .select(".hero")
+  .append("div")
+  .classed("svg-container", true)
+  .append("svg")
+  .attr("preserveAspectRatio", "xMinYMin meet")
+  .attr("viewBox", "0 0 16 9 ")
+  .classed("svg-content-responsive", true);
 
 let x = "74%";
 let y = "50%";
-let r = 255;
+let r = 2.5;
 
 circles = [
   {
     className: "circle",
     cx: "50%",
     cy: "30%",
-    r: 86,
+    r: 0.8,
     fill: "rgb(183,178,217)",
     fillOpacity: 0.63,
   },
@@ -29,7 +37,7 @@ circles = [
     className: "circle",
     cx: x,
     cy: y,
-    r: r + 50,
+    r: r + 0.5,
     fill: "rgb(136,191,196)",
     fillOpacity: 0.29,
   },
@@ -37,7 +45,7 @@ circles = [
     className: "circle",
     cx: "93%",
     cy: "20%",
-    r: 60,
+    r: 0.6,
     fill: "rgb(217,184,178)",
     fillOpacity: 0.63,
   },
@@ -45,7 +53,7 @@ circles = [
     className: "circle",
     cx: "85%",
     cy: "90%",
-    r: 50,
+    r: 0.5,
     fill: "rgb(217,215,178)",
     fillOpacity: 0.82,
   },
@@ -53,7 +61,7 @@ circles = [
     className: "circle",
     cx: x,
     cy: y,
-    r: r + 100,
+    r: r + 1,
     fill: "rgb(136,191,196)",
     fillOpacity: 0.29,
   },
@@ -61,7 +69,7 @@ circles = [
     className: "circle",
     cx: "10%",
     cy: "15%",
-    r: 8,
+    r: 0.08,
     fill: "rgb(225,28,102)",
     fillOpacity: 1,
   },
@@ -69,7 +77,7 @@ circles = [
     className: "circle",
     cx: "35%",
     cy: "68%",
-    r: 5,
+    r: 0.05,
     fill: "rgb(225,128,28)",
     fillOpacity: 1,
   },
@@ -77,7 +85,7 @@ circles = [
     className: "circle",
     cx: "5%",
     cy: "87%",
-    r: 15,
+    r: 0.15,
     fill: "rgb(28,181,225)",
     fillOpacity: 1,
   },
@@ -88,8 +96,8 @@ const vShapes = [
     href: "./images/v-shape-b.svg",
     x: x,
     y: y,
-    width: 450,
-    height: 450,
+    width: 3.5,
+    height: 3.5,
     class: "v-shape",
     id: "vShapeMain",
   },
@@ -125,12 +133,23 @@ const vShapes = [
   },
 ];
 
-if (w >= 784) {
-  svg = d3
-    .select(".hero")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
+function renderShapes() {
+  let ratioX;
+  let ratioY;
+  if (w >= 784 && w < 1200) {
+    svg.attr("viewBox", "0 0 16 12 ");
+    ratioX = 16;
+    ratioY = 12;
+  } else if (w < 783 && w >= 500) {
+    svg.attr("viewBox", "0 0 16 13 ");
+    ratioX = 16;
+    ratioY = 13;
+  } else if (w < 500) {
+    svg.attr("viewBox", "0 0 16 14 ");
+    ratioX = 16;
+    ratioY = 14;
+  }
+
   svg
     .append("rect")
     .attr("x", 0)
@@ -138,16 +157,16 @@ if (w >= 784) {
     .attr("height", "100vh")
     .attr("width", x)
     .attr("fill", "#eee");
+
   renderCircles(circles, svg);
-  renderVShapes(vShapes, svg);
-} else if (w < 783 && w > 300) {
-  height = "50vh";
-  svg = d3
-    .select(".hero")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
+  renderVShapes(vShapes, svg, ratioX, ratioY);
 }
+
+renderShapes();
+
+window.onresize = function () {
+  location.reload();
+};
 
 function renderCircles(circles, svg) {
   circles.map((c) =>
@@ -162,7 +181,10 @@ function renderCircles(circles, svg) {
   );
 }
 
-function renderVShapes(vShapes, svg) {
+function renderVShapes(vShapes, svg, ratioX = 1, ratioY = 1) {
+  y = 25;
+  y = `${y * (ratioX / ratioY)}%`;
+
   vShapes.map((v) => {
     if (v.id) {
       svg
@@ -170,20 +192,16 @@ function renderVShapes(vShapes, svg) {
         .attr("xlink:href", v.href)
         .attr("width", v.width)
         .attr("height", v.height)
-        .attr("x", () => {
-          return `calc(${x.slice(0, -1)}% - (${v.width}px / 2 ) - 2px)`;
-        })
-        .attr("y", () => {
-          return `calc(${y.slice(0, -1)}% - (${v.height}px / 2) - 50px)`;
-        })
+        .attr("x", "61.4%")
+        .attr("y", y)
         .attr("class", "v-shape")
         .attr("id", v.id);
     } else {
       svg
         .append("svg:image")
         .attr("xlink:href", v.href)
-        .attr("width", 70)
-        .attr("height", 70)
+        .attr("width", 1)
+        .attr("height", 1)
         .attr("x", v.x)
         .attr("y", v.y)
         .attr("class", "v-shape");

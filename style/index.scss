@@ -76,6 +76,10 @@ $website-desc-black: rgb(22, 22, 22);
   }
 }
 
+.hero-content {
+  z-index: 1;
+}
+
 .hero-action {
   width: 400px;
   height: 40px;
@@ -158,6 +162,7 @@ $website-desc-black: rgb(22, 22, 22);
   justify-content: center;
   border-radius: 50%;
   align-items: center;
+  z-index: 1;
   span {
     font-size: 16px;
     color: #3f3e3e;
@@ -637,8 +642,12 @@ li {
 .svg-content-responsive {
   display: inline-block;
   position: absolute;
-  top: 10px;
+  top: 0;
   left: 0;
+}
+
+svg .rect {
+  fill: none;
 }
 
 @media only screen and (min-width: 1295px) and (max-width: 1440px) {
@@ -656,7 +665,6 @@ li {
         transform: translate(-30%, -17%);
         height: 50%;
         width: 450px;
-        z-index: 1;
       }
     }
 

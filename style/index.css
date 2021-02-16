@@ -74,6 +74,10 @@
   width: 100%;
 }
 
+.hero-content {
+  z-index: 1;
+}
+
 .hero-action {
   width: 400px;
   height: 40px;
@@ -179,6 +183,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 1;
 }
 
 .action-down span {
@@ -704,8 +709,12 @@ li input[type="radio"]:checked + label::after {
 .svg-content-responsive {
   display: inline-block;
   position: absolute;
-  top: 10px;
+  top: 0;
   left: 0;
+}
+
+svg .rect {
+  fill: none;
 }
 
 @media only screen and (min-width: 1295px) and (max-width: 1440px) {
@@ -723,7 +732,6 @@ li input[type="radio"]:checked + label::after {
             transform: translate(-30%, -17%);
     height: 50%;
     width: 450px;
-    z-index: 1;
   }
   body .feature-project {
     width: 100%;
