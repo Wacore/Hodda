@@ -19,6 +19,7 @@ let r = 2.5;
 circles = [
   {
     className: "circle",
+    id: "cPurple",
     cx: "50%",
     cy: "30%",
     r: 0.8,
@@ -27,6 +28,7 @@ circles = [
   },
   {
     className: "circle",
+    id: "cGreen1",
     cx: x,
     cy: y,
     r: r,
@@ -35,6 +37,7 @@ circles = [
   },
   {
     className: "circle",
+    id: "cGreen2",
     cx: x,
     cy: y,
     r: r + 0.5,
@@ -43,6 +46,7 @@ circles = [
   },
   {
     className: "circle",
+    id: "cRed",
     cx: "93%",
     cy: "20%",
     r: 0.6,
@@ -51,6 +55,7 @@ circles = [
   },
   {
     className: "circle",
+    id: "cYellow",
     cx: "85%",
     cy: "90%",
     r: 0.5,
@@ -59,6 +64,7 @@ circles = [
   },
   {
     className: "circle",
+    id: "cGreen3",
     cx: x,
     cy: y,
     r: r + 1,
@@ -67,6 +73,7 @@ circles = [
   },
   {
     className: "circle",
+    id: "cPink",
     cx: "10%",
     cy: "15%",
     r: 0.08,
@@ -75,6 +82,7 @@ circles = [
   },
   {
     className: "circle",
+    id: "cOrange",
     cx: "35%",
     cy: "68%",
     r: 0.05,
@@ -83,6 +91,7 @@ circles = [
   },
   {
     className: "circle",
+    id: "cBlue",
     cx: "5%",
     cy: "87%",
     r: 0.15,
@@ -178,6 +187,7 @@ function renderCircles(circles, svg) {
       .attr("fill", c.fill)
       .attr("fill-opacity", c.fillOpacity)
       .attr("class", c.className)
+      .attr("id", c.id)
   );
 }
 

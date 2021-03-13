@@ -109,6 +109,7 @@ $footer-blue: rgb(6, 59, 85);
       width: 100%;
       position: relative;
       overflow-x: scroll;
+      overflow-y: hidden;
 
       .about-container {
         display: grid;

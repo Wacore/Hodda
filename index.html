@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./style/mobile-index.css" />
     <link rel="stylesheet" href="./style/tablet-index.css" />
     <link rel="stylesheet" href="./style/laptop-index.css" />
+    <link rel="stylesheet" href="./style/nav.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
@@ -24,7 +25,6 @@
     <section class="hero" id="heroSection">
       <header class="hero-header">
         <span class="logo">Hodda</span>
-        <span></span>
         <div class="navi">
           <ul>
             <li>
@@ -41,18 +41,44 @@
             </li>
           </ul>
         </div>
+        <div class="toggle-menu-container" onclick="handleRenderNav()">
+          <div class="menu-toggle-top"></div>
+          <div class="menu-toggle"></div>
+          <div class="menu-toggle-bottom"></div>
+        </div>
       </header>
       <div class="hero-content">
         <span class="hero-intro">Hi, I am Hongda Zheng</span>
         <h1 class="hero-title">I develop poducts</h1>
-        <h1 class="hero-title" id="heroTitleD">People like to use</h1>
+        <h1 class="hero-title" id="heroTitleD">people like to use</h1>
         <span class="hero-post">Web Developer & Mobile App Developer</span>
         <div class="hero-action">
-          <div class="action-hire action-box">HIRE ME</div>
-          <div class="action-projects action-box">MY PROJECTS</div>
+          <div class="action-hire action-box">
+            <a href="mailto:hoddazheng@gmail.com">HIRE ME</a>
+          </div>
+          <div class="action-projects action-box">
+            <a href="#projectsSection">MY PROJECTS</a>
+          </div>
         </div>
       </div>
       <div class="action-down"><span>Scroll Down</span></div>
+    </section>
+
+    <section class="nav">
+      <ul>
+        <li onclick="handleNavSection()">
+          <a href="#featureSection">Featured Project</a>
+        </li>
+        <li onclick="handleNavSection()">
+          <a href="#aboutSection">About</a>
+        </li>
+        <li onclick="handleNavSection()">
+          <a href="#projectsSection">Projects</a>
+        </li>
+        <li onclick="handleNavSection()">
+          <a href="#footerSection">Contact</a>
+        </li>
+      </ul>
     </section>
 
     <section class="feature-project" id="featureSection">
@@ -99,8 +125,8 @@
             </div>
             <p class="skill-title">Backend Development</p>
             <p class="feature-desc">
-              PHP, MySQL, Node.js, Express, MongoDB, Python, creation of
-              functional APIs, design of service architecture, writing re-usable
+              PHP, MySQL, Node.js, Express, MongoDB, Python, Creation of
+              functional APIs, Design of service architecture, Writing re-usable
               unit test documents
             </p>
           </div>
@@ -250,22 +276,17 @@
           <span>Hodda</span>
           <ul class="social-media">
             <li>
-              <a href="">
+              <a href="https://twitter.com/hodda_dev">
                 <i class="fab fa-twitter-square"></i>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="https://www.facebook.com/hodda.dev/">
                 <i class="fab fa-facebook-square"></i>
               </a>
             </li>
             <li>
-              <a href="">
-                <i class="fab fa-instagram-square"></i>
-              </a>
-            </li>
-            <li>
-              <a href="">
+              <a href="https://github.com/Wacore">
                 <i class="fab fa-github-square"></i>
               </a>
             </li>
@@ -275,10 +296,6 @@
               E.
               <a href="mailto:hoddazheng@gmail.com">hoddazheng@gmail.com</a
               ><br />
-            </span>
-            <span>
-              T.
-              <a href="tel:+13214315115">(321) 431-5115</a>
             </span>
           </address>
         </div>
@@ -318,6 +335,16 @@
     <script src="./funcs/WebProject.js"></script>
     <script src="./funcs/AppProject.js"></script>
     <script>
+      gsap.from("#cGreen1", { opacity: 0, duration: 1 });
+      gsap.from("#cGreen2", { opacity: 0, duration: 1, delay: 0.5 });
+      gsap.from("#cGreen3", { opacity: 0, duration: 1, delay: 1 });
+      gsap.from("#cPurple, #cYellow, #cRed", {
+        opacity: 0,
+        duration: 1,
+        delay: 1.5,
+      });
+      gsap.from(".v-shape", { opacity: 0, y: 0.5, duration: 1.5, delay: 2 });
+
       if (w > 500) {
         let tlWebProject = gsap.timeline({
           scrollTrigger: {
@@ -343,7 +370,100 @@
           .from(".image-phone", { duration: 1, y: -20, opacity: 0 })
           .from("#naokiAppImage", { duration: 1, x: 20, opacity: 0 })
           .from("#naokijc", { duration: 2, y: -20, opacity: 0 }, "-=1");
+
+        let aboutSection = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#aboutSection",
+            start: "center center",
+          },
+        });
+
+        aboutSection
+          .from(".about-card:nth-of-type(1)", {
+            duration: 1,
+            opacity: 0,
+            x: -10,
+          })
+          .from(
+            ".about-card:nth-of-type(2)",
+            { duration: 1, opacity: 0, y: 10 },
+            "-=0.5"
+          )
+          .from(
+            ".about-card:nth-of-type(3)",
+            { duration: 1, opacity: 0, x: 10 },
+            "-=0.5"
+          );
       }
+
+      const handleRenderNav = () => {
+        toggleNavClas();
+      };
+
+      const handleNavSection = () => {
+        toggleNavClas();
+      };
+
+      function toggleNavClas() {
+        $(
+          ".nav, body, .menu-toggle, .menu-toggle-top, .menu-toggle-bottom "
+        ).toggleClass("active");
+      }
+
+      // Hero Text Animation
+      const heroTextStrings = [
+        "people like to use",
+        "students engage with",
+        "to help your business grow",
+      ];
+
+      class String {
+        constructor(str) {
+          this.str = str;
+        }
+
+        render() {
+          let stringArr = this.str.split("");
+          let newStr = "";
+          stringArr.map((str) => (newStr += `<span>${str}</span>`));
+          return newStr;
+        }
+      }
+
+      let i = 1;
+
+      let t = 100;
+
+      setInterval(() => {
+        let j = 1;
+        let title = document.getElementById("heroTitleD");
+        let content = new String(heroTextStrings[i]);
+        title.innerHTML = content.render().replaceAll("<span> </span>", " ");
+
+        let spans = document.querySelectorAll("#heroTitleD span");
+        spans.forEach((s) => {
+          s.style.transitionDelay = `${t * j}ms`;
+          j++;
+        });
+
+        setTimeout(() => {
+          spans.forEach((s) => {
+            s.classList.add("active");
+          });
+        }, 100);
+
+        i++;
+        if (i == heroTextStrings.length) {
+          i = 0;
+        }
+      }, 4000);
+
+      // $(window).scroll(function (event) {
+      //   var scroll = $(window).scrollTop();
+      //   if (scroll < window.innerHeight) {
+
+      //   }
+      // });
     </script>
   </body>
 </html>

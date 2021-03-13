@@ -21,7 +21,7 @@ $footer-blue: rgb(6, 59, 85);
       height: 120vh;
 
       .hero-content {
-        width: 80%;
+        width: 90%;
         position: absolute;
         bottom: 25vh;
         left: 50%;
@@ -29,8 +29,12 @@ $footer-blue: rgb(6, 59, 85);
 
         @include card;
 
+        .hero-intro {
+          margin-bottom: 1em;
+        }
+
         h1 {
-          font-size: 2.4em;
+          font-size: 1.8em;
         }
 
         .hero-post {
@@ -102,6 +106,7 @@ $footer-blue: rgb(6, 59, 85);
         grid-template-rows: 10vh 5vh calc(75vh - 15vh);
         width: 100%;
         height: 100%;
+        overflow-y: hidden;
       }
 
       .about-cards-box {

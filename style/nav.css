@@ -1,0 +1,119 @@
+@media only screen and (max-width: 933px) {
+  body.active {
+    overflow: hidden;
+  }
+  .hero-header .navi {
+    display: none;
+  }
+  .hero-header .toggle-menu-container {
+    display: block;
+  }
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    z-index: 5;
+    display: none;
+  }
+  .nav ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    list-style: none;
+    -webkit-animation: appear 1300ms ease-in;
+            animation: appear 1300ms ease-in;
+  }
+  @-webkit-keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .nav ul li:nth-of-type(1) {
+    -webkit-animation: fadeIn 800ms ease-in;
+            animation: fadeIn 800ms ease-in;
+  }
+  .nav ul li:nth-of-type(2) {
+    -webkit-animation: fadeIn 800ms ease-in 90ms;
+            animation: fadeIn 800ms ease-in 90ms;
+  }
+  .nav ul li:nth-of-type(3) {
+    -webkit-animation: fadeIn 800ms ease-in 180ms;
+            animation: fadeIn 800ms ease-in 180ms;
+  }
+  .nav ul li:nth-of-type(4) {
+    -webkit-animation: fadeIn 800ms ease-in 270ms;
+            animation: fadeIn 800ms ease-in 270ms;
+  }
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      -webkit-transform: translateX(20px);
+              transform: translateX(20px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      -webkit-transform: translateX(20px);
+              transform: translateX(20px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .nav ul li a {
+    font-size: 24px;
+    text-decoration: none;
+    color: #063b55;
+    position: relative;
+    padding-bottom: 5px;
+    z-index: 1;
+  }
+  .nav ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #063b55;
+    -webkit-transition: width 200ms ease-in, opacity 100ms ease-in;
+    transition: width 200ms ease-in, opacity 100ms ease-in;
+  }
+  .nav ul li a:hover::before {
+    width: 100%;
+  }
+  .nav.active {
+    display: block;
+  }
+}
+/*# sourceMappingURL=nav.css.map */

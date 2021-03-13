@@ -20,12 +20,12 @@ $website-desc-black: rgb(22, 22, 22);
   width: 90%;
   height: 5%;
   display: grid;
-  grid-template-columns: 10% 40% 50%;
+  grid-template-columns: 10% 32% 50% 8%;
   align-items: center;
   position: fixed;
   left: 50%;
   transform: translate(-50%, 0);
-  z-index: 2;
+  z-index: 6;
   background-color: rgba($color: $white, $alpha: 0.5);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -36,8 +36,8 @@ $website-desc-black: rgb(22, 22, 22);
   }
 
   .navi {
+    grid-column: 3 / span 1;
     justify-self: flex-end;
-    margin-right: 1em;
 
     ul {
       display: flex;
@@ -74,6 +74,64 @@ $website-desc-black: rgb(22, 22, 22);
       }
     }
   }
+
+  .toggle-menu-container {
+    width: 30px;
+    height: 32px;
+    justify-self: center;
+    position: relative;
+    grid-column: 4 / span 1;
+    display: none;
+
+    cursor: pointer;
+
+    .menu-toggle.active {
+      transform-origin: center;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      width: 40px;
+    }
+
+    .menu-toggle-top.active {
+      transform-origin: left;
+      transform: rotate(45deg);
+      width: 18px;
+    }
+
+    .menu-toggle-bottom.active {
+      transform-origin: right;
+      transform: rotate(45deg);
+      width: 17px;
+    }
+
+    .menu-toggle,
+    .menu-toggle-top,
+    .menu-toggle-bottom {
+      height: 3px;
+      background-color: rgba($color: #000000, $alpha: 0.8);
+
+      position: absolute;
+      transition: transform 150ms ease-in-out, width 100ms ease-in 120ms;
+    }
+    .menu-toggle {
+      width: 30px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transform-origin: center;
+    }
+
+    .menu-toggle-top {
+      top: 0;
+      left: 0;
+      width: 10px;
+    }
+
+    .menu-toggle-bottom {
+      bottom: 0;
+      right: 0;
+      width: 5px;
+    }
+  }
 }
 
 .hero-content {
@@ -87,12 +145,14 @@ $website-desc-black: rgb(22, 22, 22);
   grid-template-columns: 1fr 1fr;
   align-items: center;
   text-align: center;
+  z-index: 1;
 
   .action-projects {
     display: block;
     margin-left: 1em;
     transition: ease-in 100ms;
     position: relative;
+    cursor: pointer;
   }
 
   .action-projects::before {
@@ -124,6 +184,8 @@ $website-desc-black: rgb(22, 22, 22);
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    z-index: 1;
   }
 
   .action-hire::before {
@@ -137,6 +199,7 @@ $website-desc-black: rgb(22, 22, 22);
     width: calc(350px / 2 + 2px);
     height: 42px;
     transition: ease-out 200ms;
+    z-index: -1;
   }
 
   .action-hire:hover {
@@ -148,6 +211,11 @@ $website-desc-black: rgb(22, 22, 22);
     left: -17px;
     top: -2px;
   }
+}
+
+.action-box a {
+  text-decoration: none;
+  color: #000000;
 }
 
 .action-down {
@@ -176,7 +244,24 @@ $website-desc-black: rgb(22, 22, 22);
 }
 
 .hero-title {
-  font-size: 2.7em;
+  font-size: 2.5em;
+}
+
+#heroTitleD {
+  color: $primary-color-accent;
+}
+
+#heroTitleD span {
+  font-size: 1em;
+  opacity: 0;
+  transform: rotateY(120deg);
+  transition: 150ms ease-in;
+  display: inline-block;
+}
+#heroTitleD span.active {
+  opacity: 1;
+  transform: rotateY(0);
+  color: $primary-color-accent;
 }
 
 .hero-post {
@@ -187,6 +272,11 @@ $website-desc-black: rgb(22, 22, 22);
   font-size: 20px;
 }
 
+// nav section
+.nav {
+  display: none;
+}
+
 // About card
 .about-card {
   width: 320px;
@@ -195,6 +285,7 @@ $website-desc-black: rgb(22, 22, 22);
   padding: 1em;
   margin: -0.5em 1em 0;
   border-radius: 20px;
+  box-shadow: 0px 10px 13px -7px #000000, 3px -1px 2px -1px rgba(0, 0, 0, 0);
 
   .image-container {
     height: 100px;
@@ -328,7 +419,16 @@ li {
   align-items: center;
   background-color: rgb(248, 248, 248);
   border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: 100ms ease-in;
+  border: 1px solid rgba($color: $gray, $alpha: 0.8);
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:hover .skill-icon-box {
+    box-shadow: 0px 10px 13px -7px #000000, 3px -1px 2px -1px rgba(0, 0, 0, 0);
+  }
 
   .skill-icon-box {
     height: 50px;
@@ -338,8 +438,8 @@ li {
     border-radius: 10px;
     display: grid;
     place-items: center;
-    background-color: rgb(241, 241, 241);
-    box-shadow: 0px 10px 13px -7px #000000, 3px -1px 2px -1px rgba(0, 0, 0, 0);
+    // background-color: rgb(167, 167, 167);
+    transition: box-shadow 200ms ease-in 100ms;
 
     img {
       height: 30px;
@@ -518,6 +618,7 @@ li {
   margin: 0 auto;
 
   display: grid;
+  z-index: 1;
 
   .action-container {
     display: grid;
@@ -537,6 +638,7 @@ li {
   .contact {
     background-color: $secondary-color-accent;
     position: relative;
+    z-index: 1;
 
     .footer-logo {
       position: absolute;
@@ -559,6 +661,7 @@ li {
       max-width: 800px;
       display: grid;
       grid-template-areas: "logo social" "contact .";
+      z-index: 2;
 
       span {
         display: block;
@@ -571,6 +674,7 @@ li {
         grid-area: social;
         list-style: none;
         justify-self: flex-end;
+        z-index: 2;
 
         li {
           list-style: none;
@@ -607,6 +711,7 @@ li {
     }
 
     .footer-menu {
+      z-index: 2;
       ul {
         display: flex;
         flex-direction: row;
@@ -650,7 +755,7 @@ svg .rect {
   fill: none;
 }
 
-@media only screen and (min-width: 1295px) and (max-width: 1440px) {
+@media only screen and (min-width: 1295px) {
   body {
     .hero {
       position: relative;
@@ -664,7 +769,7 @@ svg .rect {
         left: 17%;
         transform: translate(-30%, -17%);
         height: 50%;
-        width: 450px;
+        width: 600px;
       }
     }
 

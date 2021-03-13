@@ -86,6 +86,7 @@
     width: 100%;
     position: relative;
     overflow-x: scroll;
+    overflow-y: hidden;
   }
   body .about .about-container {
     display: -ms-grid;

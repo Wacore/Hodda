@@ -30,8 +30,12 @@ $footer-blue: rgb(6, 59, 85);
 
         @include card;
 
+        .hero-intro {
+          margin-bottom: 1em;
+        }
+
         h1 {
-          font-size: 2.4em;
+          font-size: 1.8em;
         }
 
         .hero-post {
@@ -213,7 +217,7 @@ $footer-blue: rgb(6, 59, 85);
         }
 
         .project-desc {
-          top: 450px;
+          top: 420px;
           left: 50%;
           transform: translate(-50%, 0);
         }
