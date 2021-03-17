@@ -8,13 +8,13 @@ let projectItems = {
   vacayelp: {
     title: "VacaYelp",
     desc:
-      "VacaYelp is a travel platform that helps travelers make every trip their best trip. Travelers can browse reviews and opinions post by others users and compare low prices on hotels, flights, and cruises.",
+      "VacaYelp is a travel platform that helps travelers make every trip their best trip. Travelers can browse reviews and opinions post by other users and compare low prices on hotels, flights, and cruises.",
     img: "./images/vacayelp-m.png",
   },
   inpex: {
     title: "Inpex",
     desc:
-      "Inpex is a platform that helps you access to a over thousands of photos. At the same time, it's also a platform for many gifted photographer to share the most impressive moment with others.",
+      "Inpex is a platform that helps you access thousands of photos. At the same time, it's also a platform for many gifted photographers to share the most impressive moment with others.",
     img: "./images/inpex-m.png",
   },
 };
